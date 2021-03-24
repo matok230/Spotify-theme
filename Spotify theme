@@ -1,0 +1,197 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+                                                                                                                                                                                    Try the new cross-platform PowerShell https://aka.ms/pscore6                                                                                                                                                                                                                                                                                                            PS C:\Users\martin> Add-Type -AssemblyName PresentationFramework                                                                                                                    PS C:\Users\martin> Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.ps1" | Invoke-Expression                             DOWNLOADING    https://api.github.com/repos/khanhas/spicetify-cli/releases/latest > OK
+DOWNLOADING    https://github.com/khanhas/spicetify-cli/releases/download/v1.2.1/spicetify-1.2.1-windows-x64.zip > OK
+EXTRACTING     C:\Users\martin\spicetify-cli\spicetify-1.2.1-windows-x64.zip into C:\Users\martin\spicetify-cli > OK
+REMOVING       C:\Users\martin\spicetify-cli\spicetify-1.2.1-windows-x64.zip > OK
+ > OK
+Run spicetify --help to get started.
+
+PS C:\Users\martin> spicetify
+info Run "spicetify -h" for commands list.
+PS C:\Users\martin> spicetify backup apply enable-devtool
+spicetify v1.2.1
+info There is available backup.
+info Clear current backup:
+success Backup is cleared.
+Backing up app files:
+OK
+Extracting:
+OK
+Preprocessing:
+OK
+OK
+success Everything is ready, you can start applying now!
+error Theme "Dribbblish" not found
+PS C:\Users\martin> [System.Windows.MessageBox]::Show('Please drag the themes into the themes folder located at | C:\Users\YourUserName\.spicetify\Themes |')
+OK
+PS C:\Users\martin> cd "$(spicetify -c | Split-Path)\Themes\Dribbblish"
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> Copy-Item dribbblish.js ..\..\Extensions
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify config extensions dribbblish.js
+warning Config "extensions" unchanged: dribbblish.js is already in the list.
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify config current_theme Dribbblish color_scheme base
+success Config changed: current_theme = Dribbblish
+info Run "spicetify apply" to apply new config
+success Config changed: color_scheme = base
+info Run "spicetify apply" to apply new config
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify config inject_css 1 replace_colors 1 overwrite_assets 1
+success Config changed: inject_css = 1
+info Run "spicetify apply" to apply new config
+success Config changed: replace_colors = 1
+info Run "spicetify apply" to apply new config
+success Config changed: overwrite_assets = 1
+info Run "spicetify apply" to apply new config
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify apply
+spicetify v1.2.1
+Copying raw assets:
+OK
+Overwriting themed assets:
+OK
+Transferring user.css:
+OK
+Overwriting custom assets:
+OK
+Applying additional modifications:
+OK
+Transferring extensions:
+OK
+success Spotify is spiced up!
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> pause
+Press Enter to continue...:
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify config color_scheme JarvisBot
+success Config changed: color_scheme = JarvisBot
+info Run "spicetify apply" to apply new config
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify apply
+spicetify v1.2.1
+Overwriting themed assets:
+OK
+Transferring user.css:
+OK
+Overwriting custom assets:
+OK
+Applying additional modifications:
+OK
+Transferring extensions:
+OK
+success Spotify is spiced up!
+PS C:\Users\martin\.spicetify\Themes\Dribbblish>
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify config current_theme JarvisBot
+success Config changed: current_theme = JarvisBot
+info Run "spicetify apply" to apply new config
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify apply
+spicetify v1.2.1
+Overwriting themed assets:
+OK
+Transferring user.css:
+OK
+Applying additional modifications:
+OK
+Transferring extensions:
+OK
+success Spotify is spiced up!
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify config current_theme Dark
+success Config changed: current_theme = Dark
+info Run "spicetify apply" to apply new config
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify apply
+spicetify v1.2.1
+Overwriting themed assets:
+OK
+Transferring user.css:
+OK
+Applying additional modifications:
+OK
+Transferring extensions:
+OK
+success Spotify is spiced up!
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify config current_theme Dark
+success Config changed: current_theme = Dark
+info Run "spicetify apply" to apply new config
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify apply
+spicetify v1.2.1
+warning Spotify version and backup version are mismatched.
+info Spotify client possibly just had an new update.
+info Please run "spicetify backup apply".
+Continue anyway? [y/N] N
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify config current_theme Dark
+success Config changed: current_theme = Dark
+info Run "spicetify apply" to apply new config
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify apply
+spicetify v1.2.1
+warning Spotify version and backup version are mismatched.
+info Spotify client possibly just had an new update.
+info Please run "spicetify backup apply".
+Continue anyway? [y/N] y
+Copying raw assets:
+OK
+Overwriting themed assets:
+OK
+Transferring user.css:
+OK
+Applying additional modifications:
+OK
+Transferring extensions:
+OK
+success Spotify is spiced up!
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify config color_scheme Dark
+success Config changed: color_scheme = Dark
+info Run "spicetify apply" to apply new config
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify apply
+spicetify v1.2.1
+warning Spotify version and backup version are mismatched.
+info Spotify cannot be backed up at this state. Please re-install Spotify then run "spicetify backup apply".
+Continue anyway? [y/N] N
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify backup apply
+spicetify v1.2.1
+info There is available backup.
+info Clear current backup:
+success Backup is cleared.
+Backing up app files:
+OK
+Extracting:
+OK
+Preprocessing:
+OK
+OK
+success Everything is ready, you can start applying now!
+Copying raw assets:
+OK
+Overwriting themed assets:
+OK
+Transferring user.css:
+OK
+Applying additional modifications:
+OK
+Transferring extensions:
+OK
+success Spotify is spiced up!
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify config color_scheme Material-Ocean
+success Config changed: color_scheme = Material-Ocean
+info Run "spicetify apply" to apply new config
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify apply
+spicetify v1.2.1
+Copying raw assets:
+OK
+Overwriting themed assets:
+OK
+Transferring user.css:
+OK
+Applying additional modifications:
+OK
+Transferring extensions:
+OK
+success Spotify is spiced up!
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify config current_theme Material-Ocean
+success Config changed: current_theme = Material-Ocean
+info Run "spicetify apply" to apply new config
+PS C:\Users\martin\.spicetify\Themes\Dribbblish> spicetify apply
+spicetify v1.2.1
+Overwriting themed assets:
+OK
+Transferring user.css:
+OK
+Applying additional modifications:
+OK
+Transferring extensions:
+OK
+success Spotify is spiced up!
+PS C:\Users\martin\.spicetify\Themes\Dribbblish>
